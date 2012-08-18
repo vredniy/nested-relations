@@ -19,8 +19,15 @@ $ ->
 
       $item.attr 'for', $item.attr('for').replace(/\d+/, randValue)  if $item[0].nodeName is 'LABEL'
 
-     $cloned.hide()
-     $cloned.appendTo $last.parent()
-     $cloned.slideDown()
+    $cloned.hide()
+    $cloned.appendTo $last.parent()
+    $cloned.slideDown()
 
-     false
+    false
+
+  $('body').delegate '.remove_answer', 'click', ->
+    $(this).closest($('.answer')).slideUp ->
+      $(this).remove()
+
+    false
+  

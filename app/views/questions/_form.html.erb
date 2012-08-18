@@ -6,12 +6,16 @@
       <div class="answer">
         <%= answers_form.input :name, :label => 'Ответ' %>
 
-        <%= link_to '-', '#', :class => 'remove_answer' %>
+        <%= link_to '#', :class => 'remove_answer' do %>
+          <i class="icon-minus-sign"></i>
+        <% end %>
       </div>
     <% end %>
   </div>
 
-  <%= link_to '+', '#', :id => 'add_answer' %>
+  <%= link_to '#', :id => 'add_answer' do %>
+    <i class="icon-plus-sign"></i>
+  <% end %>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
