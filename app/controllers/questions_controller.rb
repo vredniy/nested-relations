@@ -26,6 +26,8 @@ class QuestionsController < ApplicationController
   def new
     @question = Question.new
 
+    @question.answers.build
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @question }
@@ -66,18 +68,6 @@ class QuestionsController < ApplicationController
         format.html { render action: "edit" }
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /questions/1
-  # DELETE /questions/1.json
-  def destroy
-    @question = Question.find(params[:id])
-    @question.destroy
-
-    respond_to do |format|
-      format.html { redirect_to questions_url }
-      format.json { head :no_content }
     end
   end
 end
