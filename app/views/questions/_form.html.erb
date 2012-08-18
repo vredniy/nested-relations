@@ -3,9 +3,16 @@
 
   <div class="answers">
     <%= f.simple_fields_for :answers do |answers_form| %>
-      <%= answers_form.input :name, :label => 'Ответ' %>
+      <div class="answer">
+        <%= answers_form.input :name, :label => 'Ответ' %>
+
+        <%= link_to '-', '#', :class => 'remove_answer' %>
+      </div>
     <% end %>
   </div>
+
+  <%= link_to '+', '#', :id => 'add_answer' %>
+
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
